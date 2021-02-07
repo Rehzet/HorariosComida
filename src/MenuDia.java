@@ -7,6 +7,14 @@ public class MenuDia {
 
     private Comida cena;
 
+    public MenuDia() {
+        desayuno = new Comida("", "", "", "");
+        comidaPrimero = new Comida("", "", "", "");;
+        comidaSegundo = new Comida("", "", "", "");
+        cena = new Comida("", "", "", "");
+
+    }
+
     public Comida getDesayuno() {
         return desayuno;
     }
@@ -37,5 +45,15 @@ public class MenuDia {
 
     public void setCena(Comida cena) {
         this.cena = cena;
+    }
+
+    @Override
+    public String toString() {
+
+        return "\tDesayuno: " + getDesayuno().getNombre() + "\n" +
+                "\tComida: \n" +
+                "\t\tPrimero: " + getComidaPrimero().getNombre() + "\n" +
+                "\t\tSegundo: " + getComidaSegundo().getNombre() + "\n" +
+                "\tCena: " + getCena().getNombre();
     }
 }
