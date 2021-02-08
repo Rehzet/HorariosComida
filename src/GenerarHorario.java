@@ -57,7 +57,7 @@ public class GenerarHorario {
         restriccionesCenas[dia.ordinal()].add(tipoComida);
     }
 
-    public String horarioTexto(MenuDia[] semana) {
+    public String horarioATexto(MenuDia[] semana) {
         StringBuilder str = new StringBuilder();
         for (Dias dia: Dias.values()){
             str.append("---- ").append(dia.name()).append(" ----\n").append(semana[dia.ordinal()].toString()).append("\n");

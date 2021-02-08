@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<comidas>
+    <comida nombre="Lentejas" categoria="Comida(Primero)" tipo="Legumbres">
+
+    </comida>
+
+    <comida nombre="Garbanzos con tomate" categoria="Comida(Primero)" tipo="Legumbres">
+
+    </comida>
+
+    <comida nombre="Cocido" categoria="Comida(Unico)" tipo="Legumbres">
+
+    </comida>
+
+    <comida nombre="Guisantes" categoria="Comida(Primero)" tipo="Legumbres">
+
+    </comida>
+    <comida nombre="Ensalada de garbanzos" categoria="Comida(Primero)" tipo="Legumbres">
+        
+    </comida>
+</comidas>

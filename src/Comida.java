@@ -5,6 +5,7 @@ import java.util.List;
 public class Comida {
 
     //TODO hacer que algunas comidas sean repetibles a lo largo de la semana.
+    //TODO clasificar comidas por estación del año y generar calendario según el mes en el que se esté.
 
     private static int id = 0;
     private final int myId;

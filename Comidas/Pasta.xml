@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comidas>
+
+    <comida nombre="Macarrones boloñesa" categoria="Comida(Unico)" tipo="Pasta">
+        1. Cocer macarrones.
+        2. Comer.
+    </comida>
+
+    <comida nombre="Lasaña" categoria="Comida(Unico)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Espaguetis carbonara" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Tallarines caprese" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Tallarines con aguacate" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Tallarines con salsa de setas" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Tallarines con ajo y aceite" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Pasta china con verduras" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Ñoquis al pesto" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Ñoquis al pesto rojo" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Ñoquis con salsa de trufas" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Raviolis con salsa de queso" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Raviolis al pesto" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Raviolis con salsa de trufas" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Fideos negros con gulas" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Ensalada de pasta" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Macarrones con chorizo" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Macarrones con atún" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Macarrones con queso (mac and cheese)" categoria="Comida(Unico)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Espaguetis con boloñesa de soja texturizada" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+    
+</comidas>

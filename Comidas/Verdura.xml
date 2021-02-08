@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<comidas>    
+    <comida nombre="Puré de verduras" categoria="Comida(Primero), Cena" tipo="Verdura">
+
+    </comida>
+    <comida nombre="Vichyssoise" categoria="Comida(Primero)" tipo="Verdura">
+
+    </comida>
+    <comida nombre="Puré de calabacín" categoria="Comida(Primero), Cena" tipo="Verdura">
+        
+    </comida>
+    <comida nombre="Calabacines rellenos" categoria="Comida(Unico)" tipo="Verdura">
+        
+    </comida>
+    <comida nombre="Calabacines en tiras al caprese" categoria="Comida(Primero)" tipo="Verdura">
+        
+    </comida>    
+</comidas>
