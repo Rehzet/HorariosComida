@@ -2,10 +2,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class LeerComidas {
@@ -36,7 +40,10 @@ public class LeerComidas {
 
             }
 
-        }catch (Exception e){
+        } catch (FileNotFoundException e){
+            System.err.println("No se ha podido encontrar el archivo de comidas.");
+            System.exit(1);
+        } catch (ParserConfigurationException | SAXException | IOException e){
             e.printStackTrace();
         }
 

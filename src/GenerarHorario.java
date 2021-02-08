@@ -2,17 +2,17 @@ import java.util.*;
 
 public class GenerarHorario {
 
-    private ArrayList<Comida> comidas;
-    private MenuDia semana[];
+    private final ArrayList<Comida> comidas;
+    private final MenuDia[] semana;
 
-    private ArrayList<Comida> primeros;
-    private ArrayList<Comida> segundos;
-    private ArrayList<Comida> cenas;
+    private final ArrayList<Comida> primeros;
+    private final ArrayList<Comida> segundos;
+    private final ArrayList<Comida> cenas;
 
-    private ArrayList<String>[] restriccionesComidas;  // Ej: Martes -> Pasta
-    private ArrayList<String>[] restriccionesCenas;
+    private final ArrayList<String>[] restriccionesComidas;  // Ej: Martes -> Pasta
+    private final ArrayList<String>[] restriccionesCenas;
 
-    private HashSet<Integer> iDs;                     // Se guardan los id de las comidas para que no se repitan.
+    private final HashSet<Integer> iDs;                     // Se guardan los id de las comidas para que no se repitan.
 
     /**
      * Constructor de la clase GenerarHorario.
@@ -58,11 +58,11 @@ public class GenerarHorario {
     }
 
     public String horarioTexto(MenuDia[] semana) {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (Dias dia: Dias.values()){
-            str += "---- " + dia.name() + " ----\n" + semana[dia.ordinal()].toString() + "\n";
+            str.append("---- ").append(dia.name()).append(" ----\n").append(semana[dia.ordinal()].toString()).append("\n");
         }
-        return str;
+        return str.toString();
     }
 
     /**
@@ -83,7 +83,7 @@ public class GenerarHorario {
     /**
      * Se genera un menú aleatorio para un día de la semana. Para cada categoría de comida se tienen unas restricciones concretas,
      * que dependen del día de la semana.
-     * @param dia
+     * @param dia Día de la semana del que se va a generar un menú.
      * @return Devuelve el menú completo de ese día.
      */
     private MenuDia elegirMenuDia(Dias dia){
@@ -125,7 +125,7 @@ public class GenerarHorario {
 
         if(!ignorarRestricciones && restricciones.size() > 0){
             for(Comida comida: categoria){
-                if(!iDs.contains(comida.getId()) && restricciones != null && restricciones.contains(comida.getTipo()) )
+                if(!iDs.contains(comida.getId()) && restricciones.size() > 0 && restricciones.contains(comida.getTipo()) )
                     comidasElegibles.add(comida);
             }
         }
@@ -136,7 +136,7 @@ public class GenerarHorario {
             }
         }
 
-        if(comidasElegibles.size() > 0 && comidasElegibles.size() <= 1){
+        if(comidasElegibles.size() == 1){
             Comida c = comidasElegibles.get(0);
             iDs.add(c.getId());
             return c;

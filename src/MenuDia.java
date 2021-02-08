@@ -9,7 +9,7 @@ public class MenuDia {
 
     public MenuDia() {
         desayuno = new Comida("", "", "", "");
-        comidaPrimero = new Comida("", "", "", "");;
+        comidaPrimero = new Comida("", "", "", "");
         comidaSegundo = new Comida("", "", "", "");
         cena = new Comida("", "", "", "");
 

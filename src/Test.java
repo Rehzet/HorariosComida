@@ -8,7 +8,10 @@ public class Test {
 
         GenerarHorario gh = new GenerarHorario(comidas);
 
-        //gh.setRestriccionComidaEnDia(Dias.VIERNES, "Verdura");
+        gh.setRestriccionComidaEnDia(Dias.VIERNES, "Verdura");
+        gh.setRestriccionComidaEnDia(Dias.MIERCOLES, "Legumbres");
+        gh.setRestriccionComidaEnDia(Dias.VIERNES, "Arroz");
+
         MenuDia[] semana = gh.generarHorarioAleatorio();
 
         System.out.println(gh.horarioTexto(semana));

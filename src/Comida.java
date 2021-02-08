@@ -7,7 +7,7 @@ public class Comida {
     //TODO hacer que algunas comidas sean repetibles a lo largo de la semana.
 
     private static int id = 0;
-    private int myId;
+    private final int myId;
 
     private String nombre;
     private List<String> categorias;
@@ -35,7 +35,7 @@ public class Comida {
 
     private void catToList(String cat){
         cat = cat.replaceAll(" ", "");
-        categorias = new ArrayList<String>();
+        categorias = new ArrayList<>();
         categorias = Arrays.asList(cat.split(","));
     }
 
