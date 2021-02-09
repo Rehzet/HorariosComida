@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comidas>
+    
+    <comida nombre="Hamburguesa" categoria="Cena" tipo="Basura">
+
+    </comida>
+
+    <comida nombre="Pizza" categoria="Cena" tipo="Basura">
+
+    </comida>
+
+    <comida nombre="Perritos calientes" categoria="Cena" tipo="Basura">
+
+    </comida>
+
+    <comida nombre="Sándwiches variados" categoria="Cena" tipo="Basura">
+
+    </comida>
+
+</comidas>

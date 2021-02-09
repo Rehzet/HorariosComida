@@ -9,13 +9,14 @@
 
     </comida>
 
-    <comida nombre="Cocido" categoria="Comida(Unico)" tipo="Legumbres">
+    <comida nombre="Cocido madrileño" categoria="Comida(Unico)" tipo="Legumbres">
 
     </comida>
 
-    <comida nombre="Guisantes" categoria="Comida(Primero)" tipo="Legumbres">
+    <comida nombre="Guisantes con jamón" categoria="Comida(Primero)" tipo="Legumbres">
 
     </comida>
+
     <comida nombre="Ensalada de garbanzos" categoria="Comida(Primero)" tipo="Legumbres">
         
     </comida>

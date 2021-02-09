@@ -3,13 +3,25 @@
     <comida nombre="Arroz con tomate" categoria="Comida(Unico)" tipo="Arroz">
 
     </comida>
+
     <comida nombre="Arroz con cosas" categoria="Comida(Primero)" tipo="Arroz">
 
     </comida>
+
     <comida nombre="Arroz con salmón" categoria="Comida(Unico)" tipo="Arroz">
 
     </comida>
+
     <comida nombre="Arroz con carne al curry" categoria="Comida(Unico)" tipo="Arroz">
 
     </comida>
+
+    <comida nombre="Arroz con carne en salsa" categoria="Comida(Unico)" tipo="Arroz">
+
+    </comida>
+
+    <comida nombre="Risotto de setas" categoria="Comida(Primero)" tipo="Arroz">
+
+    </comida>
+
 </comidas>

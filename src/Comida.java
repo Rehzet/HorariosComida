@@ -5,7 +5,10 @@ import java.util.List;
 public class Comida {
 
     //TODO hacer que algunas comidas sean repetibles a lo largo de la semana.
-    //TODO clasificar comidas por estación del año y generar calendario según el mes en el que se esté.
+    //TODO clasificar comidas por estación del año (calientes o frías).
+    //TODO sustituir id por hash. Así no hay que guardar el id de una semana a otra.
+    //TODO añadir etiqueta "fin de semana". Estas comidas solo podrán aparecer los fines de semana.
+    //TODO incluir sistema de votación. Las comidas favoritas aparecerán más a menudo.
 
     private static int id = 0;
     private final int myId;
@@ -15,6 +18,14 @@ public class Comida {
     private String tipo;
     private String receta;
 
+    /**
+     * Se crea una comida con su receta. Todos los campos pueden contener una cadena vacía.
+     * @param nombre Nombre de la comida.
+     * @param categorias Hora del día a la que se puede consumir la comida. Categorías: Desayuno, Comida(Primero),
+     *                   Comida(Segundo), Comida(Unico), Cena
+     * @param tipo Tipo de la comida. Ej: Carne, pescado, pasta, arroz, etc.
+     * @param receta Texto que incluye la receta de la comida.
+     */
     public Comida(String nombre, String categorias, String tipo, String receta) {
         this.nombre = nombre;
         catToList(categorias);
@@ -25,6 +36,13 @@ public class Comida {
         id++;
     }
 
+    /**
+     * Se crea una comida con su receta. Todos los campos pueden contener una cadena vacía.
+     * @param nombre Nombre de la comida.
+     * @param categorias Hora del día a la que se puede consumir la comida. Categorías: Desayuno, Comida(Primero),
+     *                   Comida(Segundo), Comida(Unico), Cena
+     * @param tipo Tipo de la comida. Ej: Carne, pescado, pasta, arroz, etc.
+     */
     public Comida(String nombre, String categorias, String tipo) {
         this.nombre = nombre;
         catToList(categorias);
@@ -34,6 +52,10 @@ public class Comida {
         id++;
     }
 
+    /**
+     * Convierte las categorías de la comida del formato String a una lista.
+     * @param cat
+     */
     private void catToList(String cat){
         cat = cat.replaceAll(" ", "");
         categorias = new ArrayList<>();

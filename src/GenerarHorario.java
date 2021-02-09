@@ -2,6 +2,10 @@ import java.util.*;
 
 public class GenerarHorario {
 
+    //TODO generar un comidas del día teniendo en cuenta las del día anterior, para que no se repitan los tipos.
+    //TODO elegir comidas según la época del año. Tener en cuenta el hemisferio.
+    //TODO permitir restricciones por omisión (todas las comidas menos las indicadas).
+
     private final ArrayList<Comida> comidas;
     private final MenuDia[] semana;
 
@@ -49,14 +53,37 @@ public class GenerarHorario {
         return semana;
     }
 
+    /**
+     * Añade una restricción a la COMIDA de un día concreto. Esta función es útil si, por ejemplo, el martes queremos
+     * que solo se nos ofrezcan comidas del tipo "Pasta". Las restricciones son acumulables.
+     * @param dia Día en el que se va a añadir una restricción.
+     * @param tipoComida Restricción que se va a añadir basada en un tipo de comida.
+     */
     public void setRestriccionComidaEnDia(Dias dia, String tipoComida){
         restriccionesComidas[dia.ordinal()].add(tipoComida);
     }
 
+    /**
+     * Añade una restricción a la CENA de un día concreto. Esta función es útil si, por ejemplo, el jueves queremos
+     * que solo se nos ofrezcan cenas del tipo "Pescado". Las restricciones son acumulables.
+     * @param dia Día en el que se va a añadir una restricción.
+     * @param tipoComida Restricción que se va a añadir basada en un tipo de comida.
+     */
     public void setRestriccionCenaEnDia(Dias dia, String tipoComida){
         restriccionesCenas[dia.ordinal()].add(tipoComida);
     }
 
+    /**
+     * Convierte un horario dado a String
+     * @param semana horario que se va a convertir a texto.
+     * @return Se devuelve el horario en el formato:
+     * ---- DÍA -----
+     *  Desayuno: nombreDesayuno
+     *  Comida:
+     *      Primero: nombrePrimero
+     *      Segundo: nombreSegundo
+     *  Cena: nombreCena
+     */
     public String horarioATexto(MenuDia[] semana) {
         StringBuilder str = new StringBuilder();
         for (Dias dia: Dias.values()){

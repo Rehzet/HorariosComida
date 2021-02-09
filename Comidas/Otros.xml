@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comidas>
+
+    <comida nombre="Croquetas de jamón" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Empanadillas de atún" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Empanada de atún" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Empanada de pollo" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Sopa de fideos" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Sopa maravilla" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Huevos rellenos" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Tortilla de patatas" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+    <comida nombre="Patatas fritas con huevo revuelto" categoria="Cena" tipo="Otros">
+
+    </comida>
+
+</comidas>

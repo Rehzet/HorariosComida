@@ -61,10 +61,6 @@
     <comida nombre="Fideos negros con gulas" categoria="Comida(Primero)" tipo="Pasta">
         
     </comida>
-    
-    <comida nombre="Puré de verduras" categoria="Comida(Primero), Cena" tipo="Verdura">
-
-    </comida>
 
     <comida nombre="Ensalada de pasta" categoria="Comida(Primero)" tipo="Pasta">
         
@@ -83,6 +79,10 @@
     </comida>
 
     <comida nombre="Espaguetis con boloñesa de soja texturizada" categoria="Comida(Primero)" tipo="Pasta">
+        
+    </comida>
+
+    <comida nombre="Cuscús" categoria="Comida(Primero)" tipo="Pasta">
         
     </comida>
     
