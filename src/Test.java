@@ -19,16 +19,26 @@ public class Test {
 
         ArrayList<Comida> comidas = LeerComidas.leerComidas(rutas);
 
-        GenerarHorario gh = new GenerarHorario(comidas);
+        GenerarHorario gh = new GenerarHorario(comidas, true);
 
-        gh.setRestriccionComidaEnDia(Dias.LUNES, "Verdura");
-        gh.setRestriccionComidaEnDia(Dias.MARTES, "Pasta");
-        gh.setRestriccionComidaEnDia(Dias.MIERCOLES, "Legumbres");
-        gh.setRestriccionComidaEnDia(Dias.JUEVES, "Verdura");
-        gh.setRestriccionComidaEnDia(Dias.VIERNES, "Verdura");
-        gh.setRestriccionComidaEnDia(Dias.VIERNES, "Arroz");
+        /*
+        gh.setComidasAceptadasEnDia(Dias.LUNES, "Verdura");
+        gh.setComidasAceptadasEnDia(Dias.MARTES, "Pasta");
+        gh.setComidasAceptadasEnDia(Dias.MIERCOLES, "Legumbres");
+        gh.setComidasAceptadasEnDia(Dias.JUEVES, "Verdura");
+        gh.setComidasAceptadasEnDia(Dias.VIERNES, "Verdura");
+        gh.setComidasAceptadasEnDia(Dias.VIERNES, "Arroz");
 
-        gh.setRestriccionCenaEnDia(Dias.SABADO, "Basura");
+        gh.setCenasAceptadasEnDia(Dias.SABADO, "Basura");
+
+         */
+
+        gh.setPrimerosAceptados(Dias.LUNES, "Verdura");
+        gh.setPrimerosAceptados(Dias.LUNES, "Arroz");
+
+        gh.setPrimerosRestringidos(Dias.LUNES, "Verdura");
+
+        gh.setSegundosAceptados(Dias.LUNES, "Pollo");
 
         MenuDia[] semana = gh.generarHorarioAleatorio();
 

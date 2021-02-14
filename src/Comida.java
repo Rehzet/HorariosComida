@@ -6,7 +6,6 @@ public class Comida {
 
     //TODO hacer que algunas comidas sean repetibles a lo largo de la semana.
     //TODO clasificar comidas por estación del año (calientes o frías).
-    //TODO sustituir id por hash. Así no hay que guardar el id de una semana a otra.
     //TODO añadir etiqueta "fin de semana". Estas comidas solo podrán aparecer los fines de semana.
     //TODO incluir sistema de votación. Las comidas favoritas aparecerán más a menudo.
 
@@ -32,8 +31,12 @@ public class Comida {
         this.tipo = tipo;
         this.receta = receta;
 
+        /*
         myId = id;
         id++;
+         */
+
+        myId = hashCode();
     }
 
     /**

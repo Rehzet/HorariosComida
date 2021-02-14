@@ -10,7 +10,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class LeerComidas {
@@ -18,8 +17,8 @@ public class LeerComidas {
     public static ArrayList<Comida> leerComidas(String[] rutas){
         ArrayList<Comida> comidas = new ArrayList<>();
 
-        for (int i = 0; i < rutas.length; i++) {
-            comidas.addAll(leerComidas(rutas[i]));
+        for (String ruta : rutas) {
+            comidas.addAll(leerComidas(ruta));
         }
 
         return comidas;
