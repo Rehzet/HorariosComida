@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <comidas>
-    <comida nombre="Albóndigas en salsa con patatas fritas" categoria="Comida(Unico)" tipo="OtrasCarnes">
+    <comida nombre="Albóndigas en salsa con patatas fritas" categoria="HorariosComida.Comida(Unico)" tipo="OtrasCarnes">
 
     </comida>
 
-    <comida nombre="Rollo de carne picada" categoria="Comida(Segundo)" tipo="OtrasCarnes">
+    <comida nombre="Rollo de carne picada" categoria="HorariosComida.Comida(Segundo)" tipo="OtrasCarnes">
 
     </comida>
 
-    <comida nombre="Filetes rusos" categoria="Comida(Segundo)" tipo="OtrasCarnes">
+    <comida nombre="Filetes rusos" categoria="HorariosComida.Comida(Segundo)" tipo="OtrasCarnes">
 
     </comida>
 
-    <comida nombre="Albóndigas con salsa de almendras" categoria="Comida(Segundo)" tipo="OtrasCarnes">
+    <comida nombre="Albóndigas con salsa de almendras" categoria="HorariosComida.Comida(Segundo)" tipo="OtrasCarnes">
 
     </comida>
 
-    <comida nombre="Fajitas de carne" categoria="Comida(Segundo)" tipo="OtrasCarnes">
+    <comida nombre="Fajitas de carne" categoria="HorariosComida.Comida(Segundo)" tipo="OtrasCarnes">
 
     </comida>
 

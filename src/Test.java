@@ -1,4 +1,7 @@
+import HorariosComida.*;
+
 import java.util.ArrayList;
+
 
 public class Test {
 
@@ -22,14 +25,14 @@ public class Test {
         GenerarHorario gh = new GenerarHorario(comidas, true);
 
         /*
-        gh.setComidasAceptadasEnDia(Dias.LUNES, "Verdura");
-        gh.setComidasAceptadasEnDia(Dias.MARTES, "Pasta");
-        gh.setComidasAceptadasEnDia(Dias.MIERCOLES, "Legumbres");
-        gh.setComidasAceptadasEnDia(Dias.JUEVES, "Verdura");
-        gh.setComidasAceptadasEnDia(Dias.VIERNES, "Verdura");
-        gh.setComidasAceptadasEnDia(Dias.VIERNES, "Arroz");
+        gh.setComidasAceptadasEnDia(HorariosComida.Dias.LUNES, "Verdura");
+        gh.setComidasAceptadasEnDia(HorariosComida.Dias.MARTES, "Pasta");
+        gh.setComidasAceptadasEnDia(HorariosComida.Dias.MIERCOLES, "Legumbres");
+        gh.setComidasAceptadasEnDia(HorariosComida.Dias.JUEVES, "Verdura");
+        gh.setComidasAceptadasEnDia(HorariosComida.Dias.VIERNES, "Verdura");
+        gh.setComidasAceptadasEnDia(HorariosComida.Dias.VIERNES, "Arroz");
 
-        gh.setCenasAceptadasEnDia(Dias.SABADO, "Basura");
+        gh.setCenasAceptadasEnDia(HorariosComida.Dias.SABADO, "Basura");
 
          */
 
@@ -43,5 +46,6 @@ public class Test {
         MenuDia[] semana = gh.generarHorarioAleatorio();
 
         System.out.println(gh.horarioATexto(semana));
+
     }
 }

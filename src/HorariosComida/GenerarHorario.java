@@ -1,31 +1,36 @@
+package HorariosComida;
+
 import Excepciones.NoComidaException;
 
 import java.util.*;
 
+/**
+ * Clase que permite generar un horario de comidas para toda una semana o para un día concreto.
+ */
 public class GenerarHorario {
 
     //TODO elegir comidas según la época del año. Tener en cuenta el hemisferio.
 
-    private final MenuDia[] semana;
+    private MenuDia[] semana;
 
-    private final ArrayList<Comida> primeros;
-    private final ArrayList<Comida> segundos;
-    private final ArrayList<Comida> cenas;
+    private ArrayList<Comida> primeros;
+    private ArrayList<Comida> segundos;
+    private ArrayList<Comida> cenas;
 
-    private final ArrayList<String>[] comidasPrimAceptadas;  // Contiene los tipos de comida que podrán aparecer en el día.
-    private final ArrayList<String>[] comidasSegAceptadas;
-    private final ArrayList<String>[] cenasAceptadas;
+    private ArrayList<String>[] comidasPrimAceptadas;  // Contiene los tipos de comida que podrán aparecer en el día.
+    private ArrayList<String>[] comidasSegAceptadas;
+    private ArrayList<String>[] cenasAceptadas;
 
-    private final ArrayList<String>[] comidasPrimRestringidas;
-    private final ArrayList<String>[] comidasSegRestringidas;
-    private final ArrayList<String>[] cenasRestringidas;
+    private ArrayList<String>[] comidasPrimRestringidas;
+    private ArrayList<String>[] comidasSegRestringidas;
+    private ArrayList<String>[] cenasRestringidas;
 
-    private final HashSet<Integer> iDs;                     // Se guardan los id de las comidas para que no se repitan.
+    private HashSet<Integer> iDs;                     // Se guardan los id de las comidas para que no se repitan.
 
     private final boolean alternarComidas;
 
     /**
-     * Constructor de la clase GenerarHorario.
+     * Constructor de la clase HorariosComida.GenerarHorario.
      * @param comidas Lista de todas las comidas disponibles para generar el horario.
      */
     public GenerarHorario(ArrayList<Comida> comidas){
@@ -33,7 +38,7 @@ public class GenerarHorario {
     }
 
     /**
-     * Constructor de la clase GenerarHorario.
+     * Constructor de la clase HorariosComida.GenerarHorario.
      * @param comidas Lista de todas las comidas disponibles para generar el horario.
      * @param alternarComidas Indica si se puede dar el mismo tipo de camida en días consecutivos. Por ejemplo,
      *                          si el lunes de segundo plato se come pollo, si alternarComidas vale true, el martes
@@ -41,39 +46,18 @@ public class GenerarHorario {
      *                          aparecer pollo o no.
      */
     public GenerarHorario(ArrayList<Comida> comidas, boolean alternarComidas) {
-        semana = new MenuDia[7];
-        comidasPrimAceptadas = new ArrayList[7];
-        comidasSegAceptadas = new ArrayList[7];
-        cenasAceptadas = new ArrayList[7];
-
-        comidasPrimRestringidas = new ArrayList[7];
-        comidasSegRestringidas = new ArrayList[7];
-        cenasRestringidas = new ArrayList[7];
-
-        for(int i=0; i<7; i++){
-            comidasPrimAceptadas[i] = new ArrayList<>();
-            comidasSegAceptadas[i] = new ArrayList<>();
-            cenasAceptadas[i] = new ArrayList<>();
-
-            comidasPrimRestringidas[i] = new ArrayList<>();
-            comidasSegRestringidas[i] = new ArrayList<>();
-            cenasRestringidas[i] = new ArrayList<>();
-        }
-        iDs = new HashSet<>();
-
-        primeros = new ArrayList<>();
-        segundos = new ArrayList<>();
-        cenas = new ArrayList<>();
-
+        inicializar();
         this.alternarComidas = alternarComidas;
-
         clasificarComidas(comidas);
-
     }
 
     /**
-     * Genera un menú aleatorio para los 7 días de la semana.
-     * @return Array de MenuDia de 7 posiciones.
+     * Genera un menú aleatorio para los 7 días de la semana. Para cada día, se tiene en cuenta el valor {@code alternarComidas}
+     * que se ha pasado en el constructor ({@code false} por defecto). Si vale {@code true}, los platos que se generen
+     * no coincidirán en tipo con los del día anterior. También se tienen en cuenta las restricciones establecidas con
+     * las funciones {@link #setPrimerosRestringidos} y {@link #setPrimerosAceptados} (y las respectivas
+     * para los segundos platos y cenas) para cada día.
+     * @return Array de HorariosComida.MenuDia de 7 posiciones.
      */
     public MenuDia[] generarHorarioAleatorio() {
 
@@ -96,6 +80,26 @@ public class GenerarHorario {
 
 
         return semana;
+    }
+
+    /**
+     * Se genera un menú aleatorio para un día de la semana. Para cada categoría de comida se tienen unas restricciones concretas,
+     * que dependen del día de la semana.
+     * @param dia Día de la semana del que se va a generar un menú.
+     * @return Devuelve el menú completo de ese día.
+     */
+    public MenuDia elegirMenuDia(Dias dia)  {
+        // Si el primer plato es único, no hacer segundo plato.
+        // Si el primer plato no es único, ignorar restricciones en el segundo.
+        MenuDia menuDia = new MenuDia();
+
+        menuDia.setDesayuno(new Comida("Leche con galletas", "Desayuno", "Bollería"));
+        menuDia.setComidaPrimero(elegirComida(primeros, comidasPrimAceptadas[dia.ordinal()], comidasPrimRestringidas[dia.ordinal()] ));
+        if(!menuDia.getComidaPrimero().getCategorias().contains("HorariosComida.Comida(Unico)"))
+            menuDia.setComidaSegundo(elegirComida(segundos, comidasSegAceptadas[dia.ordinal()], comidasSegRestringidas[dia.ordinal()]));
+        menuDia.setCena( elegirComida(cenas, cenasAceptadas[dia.ordinal()], cenasRestringidas[dia.ordinal()]) );
+
+        return menuDia;
     }
 
     /**
@@ -165,9 +169,9 @@ public class GenerarHorario {
      * Convierte un horario dado a String
      * @param semana horario que se va a convertir a texto.
      * @return Se devuelve el horario en el formato:
-     * ---- DÍA -----
+     * ---- DIA -----
      *  Desayuno: nombreDesayuno
-     *  Comida:
+     *  HorariosComida.Comida:
      *      Primero: nombrePrimero
      *      Segundo: nombreSegundo
      *  Cena: nombreCena
@@ -181,48 +185,59 @@ public class GenerarHorario {
     }
 
     /**
+     * Se inicializan las variables de la clase {@code HorariosComida.GenerarHorario}.
+     */
+    private void inicializar(){
+        semana = new MenuDia[7];
+        comidasPrimAceptadas = new ArrayList[7];
+        comidasSegAceptadas = new ArrayList[7];
+        cenasAceptadas = new ArrayList[7];
+
+        comidasPrimRestringidas = new ArrayList[7];
+        comidasSegRestringidas = new ArrayList[7];
+        cenasRestringidas = new ArrayList[7];
+
+        for(int i=0; i<7; i++){
+            comidasPrimAceptadas[i] = new ArrayList<>();
+            comidasSegAceptadas[i] = new ArrayList<>();
+            cenasAceptadas[i] = new ArrayList<>();
+
+            comidasPrimRestringidas[i] = new ArrayList<>();
+            comidasSegRestringidas[i] = new ArrayList<>();
+            cenasRestringidas[i] = new ArrayList<>();
+        }
+        iDs = new HashSet<>();
+
+        primeros = new ArrayList<>();
+        segundos = new ArrayList<>();
+        cenas = new ArrayList<>();
+    }
+
+    /**
      * Se clasifican las comidas de la lista "comidas" en tres listas según su categoría.
      */
     private void clasificarComidas(ArrayList<Comida> comidas){
 
         for(Comida comida: comidas){
-            if(comida.getCategorias().contains("Comida(Primero)") || comida.getCategorias().contains("Comida(Unico)"))
+            if(comida.getCategorias().contains("HorariosComida.Comida(Primero)") || comida.getCategorias().contains("HorariosComida.Comida(Unico)"))
                 primeros.add(comida);
-            else if(comida.getCategorias().contains("Comida(Segundo)"))
+            else if(comida.getCategorias().contains("HorariosComida.Comida(Segundo)"))
                 segundos.add(comida);
             else if(comida.getCategorias().contains("Cena"))
                 cenas.add(comida);
         }
     }
 
-    /**
-     * Se genera un menú aleatorio para un día de la semana. Para cada categoría de comida se tienen unas restricciones concretas,
-     * que dependen del día de la semana.
-     * @param dia Día de la semana del que se va a generar un menú.
-     * @return Devuelve el menú completo de ese día.
-     */
-    private MenuDia elegirMenuDia(Dias dia)  {
-        // Si el primer plato es único, no hacer segundo plato.
-        // Si el primer plato no es único, ignorar restricciones en el segundo.
-        MenuDia menuDia = new MenuDia();
-
-        menuDia.setDesayuno(new Comida("Leche con galletas", "Desayuno", "Bollería"));
-        menuDia.setComidaPrimero(elegirComida(primeros, comidasPrimAceptadas[dia.ordinal()], comidasPrimRestringidas[dia.ordinal()] ));
-        if(!menuDia.getComidaPrimero().getCategorias().contains("Comida(Unico)"))
-            menuDia.setComidaSegundo(elegirComida(segundos, comidasSegAceptadas[dia.ordinal()], comidasSegRestringidas[dia.ordinal()]));
-        menuDia.setCena( elegirComida(cenas, cenasAceptadas[dia.ordinal()], cenasRestringidas[dia.ordinal()]) );
-
-        return menuDia;
-    }
 
     /**
      * Se selecciona una comida aleatoria de entre todas las disponibles de la categoría que toque. Las comidas no se
-     * repetirán a lo largo de la semana.
+     * podrán repetir a lo largo de la semana.
      * @param categoria Lista de comidas disponibles para la categoría de la propia lista.
      * @param comidasAceptadas Lista de tipos de comida aceptados. La comida que se elija solo podrá ser de uno de los tipos de la lista.
      * @param comidasRestringidas Lista de tipos de comida restrigidos. La comida que se elija NO podrá ser de ninguno de los tipos de la lista.
      *                            Las comidas restringidas tienen prioridad sobre las aceptadas.
      * @return Se devuelve una comida aleatoria.
+     * @throws NoComidaException Excepción que puede ocurrir cuando no haya ninguna comida elegible.
      */
     private Comida elegirComida(ArrayList<Comida> categoria, ArrayList<String> comidasAceptadas, ArrayList<String> comidasRestringidas) throws NoComidaException {
         return elegirComida(categoria, comidasAceptadas, comidasRestringidas, false);
@@ -237,8 +252,10 @@ public class GenerarHorario {
      *                            Las comidas restringidas tienen prioridad sobre las aceptadas.
      * @param ignorarRestricciones Indica si se ignoran las restriccines o no.
      * @return Se devuelve una comida aleatoria.
+     * @throws NoComidaException Excepción que puede ocurrir cuando no haya ninguna comida elegible.
      */
-    private Comida elegirComida(ArrayList<Comida> categoria, ArrayList<String> comidasAceptadas, ArrayList<String> comidasRestringidas, boolean ignorarRestricciones)  {       // Categoría = Comida, Cena, etc.
+    private Comida elegirComida(ArrayList<Comida> categoria, ArrayList<String> comidasAceptadas, ArrayList<String> comidasRestringidas,
+                                boolean ignorarRestricciones) throws NoComidaException{       // Categoría = HorariosComida.Comida, Cena, etc.
 
         ArrayList<Comida> comidasElegibles = new ArrayList<>();
 
@@ -276,7 +293,8 @@ public class GenerarHorario {
             return c;
         }
         else {
-            throw new NoComidaException();
+            throw new NoComidaException("No se ha podido elegir ninguna comida porque no había ninguna elegible. Esto puede deberse a que " +
+                    "las restricciones han anulado a las comidas permitidas.");
         }
     }
 

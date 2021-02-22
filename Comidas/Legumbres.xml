@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <comidas>
-    <comida nombre="Lentejas" categoria="Comida(Primero)" tipo="Legumbres">
+    <comida nombre="Lentejas" categoria="HorariosComida.Comida(Primero)" tipo="Legumbres">
 
     </comida>
 
-    <comida nombre="Garbanzos con tomate" categoria="Comida(Primero)" tipo="Legumbres">
+    <comida nombre="Garbanzos con tomate" categoria="HorariosComida.Comida(Primero)" tipo="Legumbres">
 
     </comida>
 
-    <comida nombre="Cocido madrileño" categoria="Comida(Unico)" tipo="Legumbres">
+    <comida nombre="Cocido madrileño" categoria="HorariosComida.Comida(Unico)" tipo="Legumbres">
 
     </comida>
 
-    <comida nombre="Guisantes con jamón" categoria="Comida(Primero)" tipo="Legumbres">
+    <comida nombre="Guisantes con jamón" categoria="HorariosComida.Comida(Primero)" tipo="Legumbres">
 
     </comida>
 
-    <comida nombre="Ensalada de garbanzos" categoria="Comida(Primero)" tipo="Legumbres">
+    <comida nombre="Ensalada de garbanzos" categoria="HorariosComida.Comida(Primero)" tipo="Legumbres">
         
     </comida>
 </comidas>
