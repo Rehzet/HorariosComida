@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <comidas>
-    <comida nombre="Solomillo Wellington" categoria="HorariosComida.Comida(Segundo)" tipo="Cerdo">
+    <comida nombre="Solomillo Wellington" categoria="Comida(Segundo)" tipo="Cerdo">
 
     </comida>
 
-    <comida nombre="Solomillo de cerdo con champiñones" categoria="HorariosComida.Comida(Segundo)" tipo="Cerdo">
+    <comida nombre="Solomillo de cerdo con champiñones" categoria="Comida(Segundo)" tipo="Cerdo">
 
     </comida>
 
-    <comida nombre="Pinchos morunos" categoria="HorariosComida.Comida(Segundo)" tipo="Cerdo">
+    <comida nombre="Pinchos morunos" categoria="Comida(Segundo)" tipo="Cerdo">
 
     </comida>
 
-    <comida nombre="Solomillo de cerdo a la plancha" categoria="HorariosComida.Comida(Segundo)" tipo="Cerdo">
+    <comida nombre="Solomillo de cerdo a la plancha" categoria="Comida(Segundo)" tipo="Cerdo">
 
     </comida>
 </comidas>

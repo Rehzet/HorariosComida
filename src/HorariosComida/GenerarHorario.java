@@ -219,9 +219,9 @@ public class GenerarHorario {
     private void clasificarComidas(ArrayList<Comida> comidas){
 
         for(Comida comida: comidas){
-            if(comida.getCategorias().contains("HorariosComida.Comida(Primero)") || comida.getCategorias().contains("HorariosComida.Comida(Unico)"))
+            if(comida.getCategorias().contains("Comida(Primero)") || comida.getCategorias().contains("Comida(Unico)"))
                 primeros.add(comida);
-            else if(comida.getCategorias().contains("HorariosComida.Comida(Segundo)"))
+            else if(comida.getCategorias().contains("Comida(Segundo)"))
                 segundos.add(comida);
             else if(comida.getCategorias().contains("Cena"))
                 cenas.add(comida);

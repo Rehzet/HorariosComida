@@ -22,7 +22,7 @@ public class Test {
         };
         */
 
-        /*
+
         String[] rutas = {
                 "/mnt/HDD/Proyectos/Java/HorariosComida/Comidas/Arroces.xml",
                 "/mnt/HDD/Proyectos/Java/HorariosComida/Comidas/Cerdo.xml",
@@ -35,8 +35,9 @@ public class Test {
                 "/mnt/HDD/Proyectos/Java/HorariosComida/Comidas/Ternera.xml",
                 "/mnt/HDD/Proyectos/Java/HorariosComida/Comidas/Verduras.xml"
         };
-         */
 
+
+        /*
         String[] rutas = {
                 "<comidas>\n" +
                         "<comida nombre=\"Arroz con tomate\" categoria=\"HorariosComida.Comida(Unico)\" tipo=\"Arroz\"> </comida>\n" +
@@ -108,7 +109,9 @@ public class Test {
                         "</comidas>"
         };
 
-        ArrayList<Comida> comidas = LeerComidas.leerComidas(rutas, false);
+         */
+
+        ArrayList<Comida> comidas = LeerComidas.leerComidas(rutas, true);
 
         GenerarHorario gh = new GenerarHorario(comidas, true);
 
